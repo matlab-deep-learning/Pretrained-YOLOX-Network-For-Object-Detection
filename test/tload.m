@@ -20,6 +20,7 @@ classdef(SharedTestFixtures = {DownloadYoloXFixture}) tload < matlab.unittest.Te
         function verifyModelAndFields(test,Model)
             % Test point to verify the fields of the downloaded models are
             % as expected.         
+            version
             loadedModel = load(fullfile(test.DataDir,Model.dataFileName));
             
             test.verifyClass(loadedModel.net,'dlnetwork');
