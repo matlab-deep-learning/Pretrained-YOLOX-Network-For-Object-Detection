@@ -13,6 +13,7 @@ This repository provides multiple pretrained YOLOX [1] object detection networks
 - MATLAB® R2022a or later
 - Deep Learning Toolbox™
 - Computer Vision Toolbox™
+- Deep Learning Toolbox Converter for ONNX Model Format™ Support Package
 
 
 ## Getting Started
