@@ -30,8 +30,8 @@ addpath(genpath('src'));
 Use the code below to download the pretrained network.
 
 ```matlab
-% Supported inputs for "downloadPretrainedYoloX" include 'yolox_s', 'yolox_m', 'yolox_l'.
-model = helper.downloadPretrainedYoloX('yolox_s');
+% Supported inputs for "downloadPretrainedYoloX" include 'yoloxS', 'yoloxM', 'yoloxL'.
+model = helper.downloadPretrainedYoloX('yoloxS');
 net = model.net;
 ```
 
