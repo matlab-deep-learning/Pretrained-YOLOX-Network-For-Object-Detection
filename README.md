@@ -10,44 +10,32 @@ This repository provides multiple pretrained YOLOX [1] object detection networks
 
 
 ## Requirements
-- MATLAB® R2022a or later
+- MATLAB® R2023b or later
 - Deep Learning Toolbox™
 - Computer Vision Toolbox™
-- Deep Learning Toolbox Converter for ONNX Model Format™ Support Package
+- Computer Vision Toolbox™ Automated Visual Inspection Library
+
+Note: Previous MATLAB® release users can use [this](https://insidelabs-git.mathworks.com/viakkala/model-hub-yolox/-/tree/main?ref_type=heads) branch to download the pretrained models.
 
 
 ## Getting Started
-Download or clone this repository to your machine and open it in MATLAB®.
+[Getting Started with YOLOX for Object Detection](https://in.mathworks.com/help/vision/ug/getting-started-with-yolox-object-detection.html)
 
-### Setup
-Add path to the source directory.
-
-```matlab
-addpath(genpath('src'));
-```
-
-### Download the pretrained network
-Use the code below to download the pretrained network.
-
-```matlab
-% Supported inputs for "downloadPretrainedYoloX" include 'yoloxS', 'yoloxM', 'yoloxL'.
-model = helper.downloadPretrainedYoloX('yoloxS');
-net = model.net;
-```
 
 ### Detect Objects Using Pretrained YoloX
 Use to code below to perform detection on an example image using the pretrained model.
+
+Note: This functionality requires Deep Learning Toolbox™ and the Computer Vision Toolbox™ Automated Visual Inspection Library. You can install the Computer Vision Toolbox Automated Visual Inspection Library from Add-On Explorer. For more information about installing add-ons, see [Get and Manage Add-Ons](https://in.mathworks.com/help/matlab/matlab_env/get-add-ons.html).
 
 ```matlab
 % Read test image.
 img = imread(fullfile("data", "inputTeam.jpg"));
 
-% Get classnames for COCO dataset.
-classNames = helper.getCOCOClasess;
+% Create a yoloxobjectdetector object to configure a pretrained YOLOX network with a CSP-DarkNet-53 backbone as the feature extractor.
+detector = yoloxObjectDetector("small-coco");
 
 % Perform detection using pretrained model.
-executionEnvironment = 'auto';
-[bboxes,scores,labels] = detectYoloX(net, img, classNames, executionEnvironment);
+[bboxes,scores,labels] = detect(detector,I);
 
 % Visualize results.
 annotations = string(labels) + ": " + (round(100*scores)) + "%";
@@ -56,30 +44,15 @@ figure, imshow(img);
 ```
 ![Results](/data/results.jpg)
 
+### Train YOLOX Network and Perform Transfer Learning
+To train a YOLOX object detection network on a labeled data set, use the [trainYOLOXObjectDetector](https://in.mathworks.com/help/vision/ref/trainyoloxobjectdetector.html) function. You must specify the class names for the data set you use to train the network. Then, train an untrained or pretrained network by using the [trainYOLOXObjectDetector](https://in.mathworks.com/help/vision/ref/trainyoloxobjectdetector.html) function. The training function returns the trained network as a [yoloxObjectDetector](https://in.mathworks.com/help/vision/ref/yoloxobjectdetector.html) object.
 
-## Metrics and Evaluation
-
-### Size and Accuracy Metrics
-
-| Model     | Input image resolution | Mean average precision (mAP) | Size (MB) |
-|-----------|:----------------------:|:----------------------------:|:---------:|
-| YoloX-s   |       640 x 640        |               39.8           |  32.0     |
-| YoloX-m   |       640 x 640        |               45.9           |  90.2     |
-| YoloX-l   |       640 x 640        |               48.6           |  192.9    |
-
-
-mAP for models trained on the COCO dataset is computed as average over IoU of .5:.95.
+To learn how to configure and train a YOLOX object detector for transfer learning to detect small objects, see the [Detect Defects on Printed Circuit Boards Using YOLOX Network](https://in.mathworks.com/help/vision/ug/detect-pcb-defects-using-yolox-deep-learning.html) example.
 
 
 ## Network Details
 YOLOX is one of the best performing object detectors and is considered as an improvement to the existing YOLO variants such as YOLO v4, and YOLO v5.
 ![YOLOX architecture](/data/yolox_arch.png)
-
-Following are the key features of the YOLOX object detector compared to its predecessors:
-- Anchor-free detectors significantly reduce the number of design parameters.
-- A decoupled head for classification, regression, and localization improves the convergence speed.
-- SimOTA advanced label assignment strategy reduces training time and avoids additional solver hyperparameters.
-- Strong data augmentations like MixUp and Mosiac to boost YOLOX performance.
 
 
 ## References
@@ -88,4 +61,4 @@ Following are the key features of the YOLOX object detector compared to its pred
 [2] Lin, T., et al. "Microsoft COCO: Common objects in context. arXiv 2014." arXiv preprint arXiv:1405.0312 (2014).
 
 
-Copyright 2022 The MathWorks, Inc.
+Copyright 2022 - 2024 The MathWorks, Inc.
