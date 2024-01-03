@@ -4,10 +4,6 @@ This repository provides multiple pretrained YOLOX [1] object detection networks
 
 **Creator**: MathWorks Development
 
-**Includes un-trained model**: ❌  
-
-**Includes transfer learning script**: ❌  
-
 
 ## Requirements
 - MATLAB® R2023b or later
