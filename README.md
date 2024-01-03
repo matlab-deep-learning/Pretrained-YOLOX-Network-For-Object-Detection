@@ -15,7 +15,7 @@ This repository provides multiple pretrained YOLOX [1] object detection networks
 - Computer Vision Toolbox™
 - Computer Vision Toolbox™ Automated Visual Inspection Library
 
-Note: Previous MATLAB® release users can use [this](https://insidelabs-git.mathworks.com/viakkala/model-hub-yolox/-/tree/main?ref_type=heads) branch to download the pretrained models.
+Note: Previous MATLAB® release users can use [this](https://github.com/matlab-deep-learning/Pretrained-YOLOX-Network-For-Object-Detection/tree/previous) branch to download the pretrained models.
 
 
 ## Getting Started
