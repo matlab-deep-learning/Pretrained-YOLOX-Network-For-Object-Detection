@@ -16,7 +16,7 @@ classdef DownloadYoloXFixture < matlab.unittest.fixtures.Fixture
     
     methods
         function setup(this)            
-            this.YoloxsExist = exist(fullfile(this.YoloxDataDir,'yolox_s.mat'),'file')==2;
+            this.YoloxsExist = exist(fullfile(this.YoloxDataDir,'yoloxS.mat'),'file')==2;
             
             % Call this in eval to capture and drop any standard output
             % that we don't want polluting the test logs.
