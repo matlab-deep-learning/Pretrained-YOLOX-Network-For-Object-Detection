@@ -13,7 +13,7 @@ classdef(SharedTestFixtures = {DownloadYoloXFixture}) tdownloadPretrainedYoloX <
 
     methods(Test)
         function verifyDownloadedFilesExist(test)
-            dataFileName = 'yolox_s.mat';
+            dataFileName = 'yoloxS.mat';
             test.verifyTrue(isequal(exist(fullfile(test.DataDir,dataFileName),'file'),2));
         end
     end
