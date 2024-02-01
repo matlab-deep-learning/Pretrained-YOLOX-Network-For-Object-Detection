@@ -1,11 +1,10 @@
 version: 2.1
 orbs:
-  matlab: mathworks/matlab@0.7.1
-
+  matlab: mathworks/matlab@0.12.0
 jobs:
   build:
     machine:
-      image: ubuntu-2004:202111-02
+      image: ubuntu-2204:2022.07.1
     steps:
       - checkout
       - matlab/install:
