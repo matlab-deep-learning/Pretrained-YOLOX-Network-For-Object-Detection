@@ -20,17 +20,17 @@ switch modelName
         if isfile(fullfile(dataPath, 'yolox_s.zip'))
             delete(fullfile(dataPath, 'yolox_s.zip'))
         end
-        netMatFileFullPath = fullfile(dataPath, 'yolox_s.mat');
+        netMatFileFullPath = fullfile(dataPath, 'yoloxS.mat');
     case 'yoloxM'
         if isfile(fullfile(dataPath, 'yolox_m.zip'))
             delete(fullfile(dataPath, 'yolox_m.zip'))
         end        
-        netMatFileFullPath = fullfile(dataPath, 'yolox_m.mat');
+        netMatFileFullPath = fullfile(dataPath, 'yoloxM.mat');
     case 'yoloxL'
         if isfile(fullfile(dataPath, 'yolox_l.zip'))
             delete(fullfile(dataPath, 'yolox_l.zip'))
         end
-        netMatFileFullPath = fullfile(dataPath, 'yolox_l.mat');
+        netMatFileFullPath = fullfile(dataPath, 'yoloxL.mat');
 end
 
 netZipFileFullPath = fullfile(dataPath, [modelName, '.zip']);
