@@ -21,13 +21,13 @@ classdef DownloadYoloXFixture < matlab.unittest.fixtures.Fixture
             % Call this in eval to capture and drop any standard output
             % that we don't want polluting the test logs.
             if ~this.YoloxsExist
-            	evalc('helper.downloadPretrainedYoloX(''yolox_s'');');                
+            	evalc('helper.downloadPretrainedYoloX(''yoloxS'');');                
             end
         end
         
         function teardown(this)
             if ~this.YoloxsExist
-            	delete(fullfile(this.YoloxDataDir,'yolox_s.mat'));
+            	delete(fullfile(this.YoloxDataDir,'yoloxS.mat'));
             end
         end
     end
