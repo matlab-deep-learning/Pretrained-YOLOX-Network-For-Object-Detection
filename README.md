@@ -15,7 +15,7 @@ Note: Previous MATLAB® release users can use [this](https://github.com/matlab-d
 
 
 ## Getting Started
-[Getting Started with YOLOX for Object Detection](https://in.mathworks.com/help/vision/ug/getting-started-with-yolox-object-detection.html)
+[Getting Started with YOLOX for Object Detection](https://www.mathworks.com/help/visual-inspection/ug/get-started-with-yolox-object-detection.html)
 
 
 ### Detect Objects Using Pretrained YoloX
@@ -41,9 +41,9 @@ figure, imshow(img);
 ![Results](/data/results.jpg)
 
 ### Train YOLOX Network and Perform Transfer Learning
-To train a YOLOX object detection network on a labeled data set, use the [trainYOLOXObjectDetector](https://in.mathworks.com/help/vision/ref/trainyoloxobjectdetector.html) function. You must specify the class names for the data set you use to train the network. Then, train an untrained or pretrained network by using the [trainYOLOXObjectDetector](https://in.mathworks.com/help/vision/ref/trainyoloxobjectdetector.html) function. The training function returns the trained network as a [yoloxObjectDetector](https://in.mathworks.com/help/vision/ref/yoloxobjectdetector.html) object.
+To train a YOLOX object detection network on a labeled data set, use the [trainYOLOXObjectDetector](https://www.mathworks.com/help/visual-inspection/ref/trainyoloxobjectdetector.html) function. You must specify the class names for the data set you use to train the network. Then, train an untrained or pretrained network by using the [trainYOLOXObjectDetector](https://www.mathworks.com/help/visual-inspection/ref/trainyoloxobjectdetector.html) function. The training function returns the trained network as a [yoloxObjectDetector](https://www.mathworks.com/help/visual-inspection/ref/yoloxobjectdetector.html) object.
 
-To learn how to configure and train a YOLOX object detector for transfer learning to detect small objects, see the [Detect Defects on Printed Circuit Boards Using YOLOX Network](https://in.mathworks.com/help/vision/ug/detect-pcb-defects-using-yolox-deep-learning.html) example.
+To learn how to configure and train a YOLOX object detector for transfer learning to detect small objects, see the [Detect Defects on Printed Circuit Boards Using YOLOX Network](https://www.mathworks.com/help/visual-inspection/ug/detect-pcb-defects-using-yolox-deep-learning.html) example.
 
 
 ## Network Details
